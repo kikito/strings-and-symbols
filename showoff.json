@@ -1,0 +1,9 @@
+{ "name": "Symbols, Strings and Surprises",
+  "description": "A small presentation for madrid-rb",
+  "sections": [
+    "sections/intro.md",
+    "sections/symbols.md",
+    "sections/strings.md",
+    "sections/thanks.md"
+  ]
+}
