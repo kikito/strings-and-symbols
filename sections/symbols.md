@@ -2,24 +2,22 @@
  
 # Symbols #
 
-<!SLIDE execute>
-    @@@ ruby
-    # Always the same object #
+<!SLIDE>
+#Immutability#
 
-    a = :hello
-    b = :hello
-    a.object_id == b.object_id # true
+* Write only-once to memory
 
 <!SLIDE command>
 #String#to_sym#
 
 <!SLIDE execute>
     @@@ ruby
-    # Always the same object #
+    a = "hello".to_sym
+    b = ("hel" + "lo").to_sym
+<!SLIDE>
 
-    a = :hello
-    b = "hello".to_sym
-    a.object_id == b.object_id # true
+<!SLIDE command>
+#Object#object_id#
 
 <!SLIDE execute>
     @@@ ruby
@@ -29,16 +27,43 @@
     b = ("hel" + "lo").to_sym
     a.object_id == b.object_id # true
 
+<!SLIDE execute>
+    @@@ ruby
+    # Always the same object #
+
+    a = :hello
+    b = :hello
+    a.object_id == b.object_id # true
+
+<!SLIDE>
+# Conclusions #
+
+<!SLIDE>
+# Pro: Convenient hash key
+
+* Basically just do `object_id`
+
+<!SLIDE bullets>
+
+# Con: Immutability #
+
+* Can't Modify
+
+<!SLIDE bullets>
+
+# Con: No GC #
+
+* Never collected
+
+
 <!SLIDE>
 # Alternative notation #
 
 <!SLIDE execute>
     @@@ ruby
-    # Alernative notation #
+    # Symbols with spaces #
 
-    a = :hello
-    b = :"hello"
-    a.object_id == b.object_id # true
+    a = "hello madrid-rb".to_sym
 
 <!SLIDE execute>
     @@@ ruby
@@ -65,12 +90,4 @@
     b = :"hello
     madrid-rb"
     a.object_id == b.object_id # true
-
-
-<!SLIDE bullets>
-# Immutability #
-
-* Can't Modify
-* Can't GC
-
 
